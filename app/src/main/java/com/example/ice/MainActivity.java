@@ -11,7 +11,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FilterShape shape = new FilterShape(this);
-        setContentView(shape);
+        FilterShape shape1 = new FilterShape(this, 0,20,400,400,false);
+        FilterShape shape2 = new FilterShape(this, 600,20,400,400,true);
+
+        setContentView(shape1);
+        setContentView(shape2);
     }
 }

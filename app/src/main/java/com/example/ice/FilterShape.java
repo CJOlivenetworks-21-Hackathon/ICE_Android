@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -15,24 +16,47 @@ import java.util.Objects;
 public class FilterShape extends View {
     Paint paint;
     Path path;
-    Canvas canvas;
+    Object[] yoloObjects;
+    boolean IsSafe;
+    //    test용 변수
+    int x;
+    int y;
+    int w;
+    int h;
 
     private int mViewWidth = 0;
     private int mViewHeight = 0;
 
     public FilterShape(Context context) {
         super(context);
-        initMyDraw();
+//        initMyDraw();
     }
 
     public FilterShape(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        initMyDraw();
+//        initMyDraw();
     }
 
-    public FilterShape(Context context, Object[] objects) {
+    public FilterShape(Context context, Object[] objects, boolean IsSafe) {
         super(context);
+        this.yoloObjects = objects;
+        this.IsSafe = IsSafe;
+//        initMyDraw();
+    }
 
+    //    Test용 임시 생성자
+    public FilterShape(Context context, int x, int y, int w, int h, boolean IsSafe) {
+        super(context);
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.IsSafe = IsSafe;
+        if (IsSafe) {
+            initMySafeDraw();
+        } else {
+            initMyUnsafeDraw();
+        }
     }
 
     @Override
@@ -42,30 +66,36 @@ public class FilterShape extends View {
         setMeasuredDimension(mViewWidth, mViewHeight);
     }
 
-    public void initMyDraw() {
+    public void initMySafeDraw() {
+        paint = new Paint();
+        paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(10);
+    }
+
+    public void initMyUnsafeDraw() {
         paint = new Paint();
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(4);
+        paint.setStrokeWidth(10);
+    }
 
-        path = new Path();
+    public void DrawSafeSign(Canvas canvas) {
+        canvas.drawRect(x, y, x + w, y + h, paint);
+    }
+
+    public void DrawUnsafeSign(Canvas canvas) {
+        canvas.drawLine(x + (w / 3), y + (h / 3), x + (2 * (w / 3)), y + (2 * (h / 3)), paint);
+        canvas.drawLine(x + (2 * (w / 3)), y + (h / 3), x + (w / 3), y + (2 * (h / 3)), paint);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        canvas.drawRect(100, 100, 200, 200, paint);
-
-//        m_Canvas = canvas;
-//        m_Canvas.drawColor(0xFFFFFFFF);
-//
-//        float x = mViewWidth / 2;
-//        float y = mViewHeight / 2;
-//        m_Canvas.rotate(45, x, y);
-//
-//        // Path 갱신 영역
-//        m_Canvas.drawPath(m_Path, m_Paint);
-
+        if (IsSafe) {
+            DrawSafeSign(canvas);
+        } else {
+            DrawUnsafeSign(canvas);
+        }
     }
 }
