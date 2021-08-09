@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.navigation
+package com.example.android.codelabs.ice
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -17,7 +17,7 @@
     app:startDestination="@+id/home_dest">
     <fragment
         android:id="@+id/home_dest"
-        android:name="com.example.android.codelabs.navigation.HomeFragment"
+        android:name="com.example.android.codelabs.ice.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/home_fragment">
 
@@ -31,11 +31,21 @@
             <!--app:popExitAnim="@anim/slide_out_right" />-->
         <!-- TODO END STEP 7.1 -->
 
+        <action
+            android:id="@+id/action_home_dest_to_flow_step_one_dest"
+            app:destination="@id/flow_step_one_dest" />
+        <action
+            android:id="@+id/next_action2"
+            app:destination="@id/flow_step_one_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/flow_step_one_dest"
-        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        android:name="com.example.android.codelabs.ice.FlowStepFragment"
         tools:layout="@layout/flow_step_one_fragment">
         <argument
             android:name="flowStepNumber"
@@ -50,7 +60,7 @@
 
     <fragment
         android:id="@+id/flow_step_two_dest"
-        android:name="com.example.android.codelabs.navigation.FlowStepFragment"
+        android:name="com.example.android.codelabs.ice.FlowStepFragment"
         tools:layout="@layout/flow_step_two_fragment">
 
         <argument
@@ -74,7 +84,7 @@
 
     <fragment
         android:id="@+id/deeplink_dest"
-        android:name="com.example.android.codelabs.navigation.DeepLinkFragment"
+        android:name="com.example.android.codelabs.ice.DeepLinkFragment"
         android:label="@string/deeplink"
         tools:layout="@layout/deeplink_fragment">
 
@@ -87,4 +97,9 @@
 
         <!-- TODO END STEP 11.1 -->
     </fragment>
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.example.android.codelabs.ice.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
 </navigation>
