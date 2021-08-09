@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.ice
+package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
 import android.view.*
@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        return inflater.inflate(R.layout.group_list_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

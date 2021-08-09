@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.codelabs.ice
+package com.cj_onlyone.hackathon.ice
 
 import android.content.res.Resources
 import android.os.Bundle

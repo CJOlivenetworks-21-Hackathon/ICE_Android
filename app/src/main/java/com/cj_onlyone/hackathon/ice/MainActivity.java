@@ -1,4 +1,4 @@
-package com.example.android.codelabs.ice;
+package com.cj_onlyone.hackathon.ice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
