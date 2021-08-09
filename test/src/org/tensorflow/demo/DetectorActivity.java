@@ -239,6 +239,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
         });
   }
 
+  // OverlayView : canvas overlaying object
   OverlayView trackingOverlay;
 
   @Override
