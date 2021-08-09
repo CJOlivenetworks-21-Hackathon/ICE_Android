@@ -53,7 +53,8 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<View>(R.id.next_button).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.next_action)
+            Navigation.createNavigateOnClickListener(R.id.next_action3)
         )
     }
+
 }

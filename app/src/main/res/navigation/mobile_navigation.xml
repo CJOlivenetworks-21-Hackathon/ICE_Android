@@ -14,29 +14,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/home_dest">
+    app:startDestination="@+id/group_list_dest">
     <fragment
-        android:id="@+id/home_dest"
+        android:id="@+id/group_list_dest"
         android:name="com.cj_onlyone.hackathon.ice.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/group_list_fragment">
 
-        <!-- TODO STEP 7.1 - Add action with transitions -->
-        <!--<action-->
-            <!--android:id="@+id/next_action"-->
-            <!--app:destination="@+id/flow_step_one_dest"-->
-            <!--app:enterAnim="@anim/slide_in_right"-->
-            <!--app:exitAnim="@anim/slide_out_left"-->
-            <!--app:popEnterAnim="@anim/slide_in_left"-->
-            <!--app:popExitAnim="@anim/slide_out_right" />-->
-        <!-- TODO END STEP 7.1 -->
-
         <action
-            android:id="@+id/action_home_dest_to_flow_step_one_dest"
-            app:destination="@id/flow_step_one_dest" />
-        <action
-            android:id="@+id/next_action2"
-            app:destination="@id/flow_step_one_dest"
+            android:id="@+id/next_action1"
+            app:destination="@id/category_large_dest"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -44,22 +31,26 @@
     </fragment>
 
     <fragment
-        android:id="@+id/flow_step_one_dest"
+        android:id="@+id/category_large_dest"
         android:name="com.cj_onlyone.hackathon.ice.CategoryFragment"
         tools:layout="@layout/category_large_fragment">
+
         <argument
             android:name="flowStepNumber"
             app:argType="integer"
             android:defaultValue="1"/>
 
         <action
-            android:id="@+id/next_action"
-            app:destination="@+id/flow_step_two_dest">
-        </action>
+            android:id="@+id/next_action2"
+            app:destination="@+id/category_medium_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
-        android:id="@+id/flow_step_two_dest"
+        android:id="@+id/category_medium_dest"
         android:name="com.cj_onlyone.hackathon.ice.CategoryFragment"
         tools:layout="@layout/category_medium_fragment">
 
@@ -68,18 +59,17 @@
             app:argType="integer"
             android:defaultValue="2"/>
 
-        <action
+        <!--<action
             android:id="@+id/next_action"
-            app:popUpTo="@id/home_dest">
-        </action>
+            app:popUpTo="@id/group_list_dest">
+        </action>-->
+        <action
+            android:id="@+id/next_action3"
+            app:destination="@+id/category_large_dest"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
-
-    <!-- TODO STEP 4 Create a new navigation destination pointing to SettingsFragment -->
-    <!--<fragment-->
-        <!--android:id="@+id/settings_dest"-->
-        <!--android:name="com.cj_onlyone.hackathon.ice.codelabs.navigation.SettingsFragment"-->
-        <!--android:label="@string/settings"-->
-        <!--tools:layout="@layout/settings_fragment" />-->
-    <!-- TODO END STEP 4 -->
 
 </navigation>
