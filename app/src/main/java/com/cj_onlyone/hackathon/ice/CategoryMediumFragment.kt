@@ -17,35 +17,31 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
-import android.view.*
-import android.widget.Button
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 
-/**
- * Fragment used to show how to navigate to another destination
- */
-class HomeFragment : Fragment() {
+class CategoryMediumFragment  : Fragment() {
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.group_list_fragment, container, false)
+
+        return inflater.inflate(R.layout.category_medium_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
-        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action1, null)
+        view.findViewById<View>(R.id.next_button2).setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.next_action3)
         )
-        //TODO END STEP 7.2
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-    }
 }
