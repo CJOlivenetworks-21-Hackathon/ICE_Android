@@ -24,6 +24,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * Presents how multiple steps flow could be implemented.
@@ -45,6 +46,12 @@ class CategoryLargeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler(view)
+        val fab: View = view.findViewById(R.id.cart)
+        fab.setOnClickListener{view ->
+        Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .show()
+                }
     }
 
     private fun initRecycler(view:View) {

@@ -30,13 +30,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-        <!--<ImageButton
-           android:id="@+id/eggs"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:src="@drawable/eggs"
-           app:layout_constraintBottom_toBottomOf="parent"  />
-          app:layout_constraintTop_toBottomOf="@+id/text"-->
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/cart"
+        android:src="@drawable/ic_shopping_cart_white"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="366dp"
+        tools:layout_editor_absoluteY="741dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
