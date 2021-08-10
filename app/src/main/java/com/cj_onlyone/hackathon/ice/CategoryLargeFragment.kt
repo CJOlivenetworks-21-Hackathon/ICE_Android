@@ -17,6 +17,7 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
+import android.util.Log
 //import kotlinx.android.synthetic.main.activity_main.*
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,11 @@ class CategoryLargeFragment : Fragment() {
     private fun initRecycler(view:View) {
         val rv_profile : RecyclerView = view.findViewById(R.id.rv_profile)
         profileAdapter = ProfileAdapter(this.context)
+        profileAdapter.itemClick = object : ProfileAdapter.ItemClick{
+            override fun onClick(view: View, position: Int) {
+                Log.v("LARGE_CAT", "item onclicked")
+            }
+        }
         rv_profile.adapter = profileAdapter
 
         datas.apply {
@@ -60,7 +66,7 @@ class CategoryLargeFragment : Fragment() {
             add(ProfileData(img=R.drawable.spices,  name = "spices", age = 24))
             profileAdapter.datas = datas
             profileAdapter.notifyDataSetChanged()
-
         }
+
     }
 }

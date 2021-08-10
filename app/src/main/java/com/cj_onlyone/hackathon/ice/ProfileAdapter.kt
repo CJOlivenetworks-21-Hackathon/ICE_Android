@@ -19,8 +19,18 @@ class ProfileAdapter(private val context: Context?) : RecyclerView.Adapter<Profi
 
     override fun getItemCount(): Int = datas.size
 
+    interface ItemClick {
+        fun onClick(view: View, position:Int)
+    }
+    var itemClick : ItemClick? = null
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(datas[position])
+        if (itemClick != null) {
+            holder?.itemView?.setOnClickListener{v->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -36,6 +46,5 @@ class ProfileAdapter(private val context: Context?) : RecyclerView.Adapter<Profi
 
         }
     }
-
 
 }
