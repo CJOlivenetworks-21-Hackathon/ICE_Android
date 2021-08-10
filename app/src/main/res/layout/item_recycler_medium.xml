@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingHorizontal="20dp"
     android:paddingVertical="10dp"
-    android:background="@color/colorPrimary"
+    android:layout_margin="10dp"
+    android:background="@color/lightGrey"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -16,7 +17,7 @@
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:textSize="24sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
