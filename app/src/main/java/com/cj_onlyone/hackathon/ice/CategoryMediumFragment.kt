@@ -21,12 +21,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoryMediumFragment  : Fragment() {
+
+    companion object {
+        lateinit var  prefs : PreferenceUtil
+    }
+
     lateinit var mediumAdapter: MediumAdapter
     val datas = mutableListOf<MediumData>()
 
@@ -41,7 +47,8 @@ class CategoryMediumFragment  : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // preference store setup
+        prefs = PreferenceUtil(view.context)
         initRecycler(view)
         //button for add to the cart
         view.findViewById<View>(R.id.next_button2).setOnClickListener(

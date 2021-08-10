@@ -31,6 +31,10 @@ import com.google.android.material.snackbar.Snackbar
  */
 class CategoryLargeFragment : Fragment() {
 
+    companion object {
+        lateinit var  prefs : PreferenceUtil
+    }
+
     lateinit var largeAdapter: LargeAdapter
     val datas = mutableListOf<LargeData>()
 
@@ -45,14 +49,17 @@ class CategoryLargeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //setup to read for cart
+        prefs = PreferenceUtil(view.context)
         initRecycler(view)
         val fab: View = view.findViewById(R.id.cart)
         fab.setOnClickListener{view ->
-        Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
-                }
+            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null)
+                    .show()
+        }
     }
+
 
     private fun initRecycler(view:View) {
         val rv_profile : RecyclerView = view.findViewById(R.id.rv_profile)

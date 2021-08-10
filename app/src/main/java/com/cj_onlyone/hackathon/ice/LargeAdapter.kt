@@ -1,12 +1,15 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
@@ -15,9 +18,20 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     var datas = mutableListOf<LargeData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_large,parent,false)
-        view.setOnClickListener(
+        /*
+        view.setOnClickListener { view ->
+                val target : String = view.findViewById<TextView>(R.id.tv_rv_name).toString()
+                val bundle = Bundle()
+                bundle.putString("Large", target)
+                Navigation.createNavigateOnClickListener(R.id.next_action2, null)
+
+        }
+        */
+        /*
+        view.setOnClickListener (
                 Navigation.createNavigateOnClickListener(R.id.next_action2, null)
         )
+         */
         return ViewHolder(view)
     }
 
@@ -29,6 +43,17 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     var itemClick : ItemClick? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemView.setOnClickListener{
+            val target : LargeData = datas[position]
+            val bundle = Bundle()
+            bundle.putString("LARGE", target.name)
+
+            Toast.makeText(holder.itemView.context, target.name, Toast.LENGTH_LONG).show()
+            // Using the Kotlin extension in the -ktx artifacts
+            // Alternatively, use Navigation.findNavController(holder.itemView)
+            holder.itemView.findNavController().navigate(
+                    R.id.next_action2, bundle)
+        }
         holder.bind(datas[position])
     }
 
