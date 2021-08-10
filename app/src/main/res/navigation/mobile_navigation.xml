@@ -51,7 +51,7 @@
 
     <fragment
         android:id="@+id/category_medium_dest"
-        android:name="com.cj_onlyone.hackathon.ice.CategoryLargeFragment"
+        android:name="com.cj_onlyone.hackathon.ice.CategoryMediumFragment"
         tools:layout="@layout/category_medium_fragment">
 
         <argument

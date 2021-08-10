@@ -32,7 +32,6 @@ class CategoryMediumFragment  : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
-
         return inflater.inflate(R.layout.category_medium_fragment, container, false)
     }
 

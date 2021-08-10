@@ -30,8 +30,8 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class CategoryLargeFragment : Fragment() {
 
-    lateinit var profileAdapter: ProfileAdapter
-    val datas = mutableListOf<ProfileData>()
+    lateinit var largeAdapter: LargeAdapter
+    val datas = mutableListOf<LargeData>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,23 +49,23 @@ class CategoryLargeFragment : Fragment() {
 
     private fun initRecycler(view:View) {
         val rv_profile : RecyclerView = view.findViewById(R.id.rv_profile)
-        profileAdapter = ProfileAdapter(this.context)
-        profileAdapter.itemClick = object : ProfileAdapter.ItemClick{
+        largeAdapter = LargeAdapter(this.context)
+        largeAdapter.itemClick = object : LargeAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
                 Log.v("LARGE_CAT", "item onclicked")
             }
         }
-        rv_profile.adapter = profileAdapter
+        rv_profile.adapter = largeAdapter
 
         datas.apply {
-            add(ProfileData(img=R.drawable.eggs,  name = "eggs", age = 24))
-            add(ProfileData(img=R.drawable.garlic,  name = "garlic", age = 24))
-            add(ProfileData(img=R.drawable.meats,  name = "meats", age = 24))
-            add(ProfileData(img=R.drawable.nuts,  name = "nuts", age = 24))
-            add(ProfileData(img=R.drawable.seafoods,   name = "seafoods", age = 24))
-            add(ProfileData(img=R.drawable.spices,  name = "spices", age = 24))
-            profileAdapter.datas = datas
-            profileAdapter.notifyDataSetChanged()
+            add(LargeData(img=R.drawable.eggs,  name = "eggs", age = 24))
+            add(LargeData(img=R.drawable.garlic,  name = "garlic", age = 24))
+            add(LargeData(img=R.drawable.meats,  name = "meats", age = 24))
+            add(LargeData(img=R.drawable.nuts,  name = "nuts", age = 24))
+            add(LargeData(img=R.drawable.seafoods,   name = "seafoods", age = 24))
+            add(LargeData(img=R.drawable.spices,  name = "spices", age = 24))
+            largeAdapter.datas = datas
+            largeAdapter.notifyDataSetChanged()
         }
 
     }
