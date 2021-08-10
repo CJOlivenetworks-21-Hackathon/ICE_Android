@@ -47,6 +47,14 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/next_action4"
+            app:destination="@+id/group_list_dest"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 
     <fragment
@@ -59,10 +67,6 @@
             app:argType="integer"
             android:defaultValue="2"/>
 
-        <!--<action
-            android:id="@+id/next_action"
-            app:popUpTo="@id/group_list_dest">
-        </action>-->
         <action
             android:id="@+id/next_action3"
             app:destination="@+id/category_large_dest"

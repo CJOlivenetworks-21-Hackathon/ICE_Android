@@ -22,6 +22,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 
@@ -58,6 +59,9 @@ class CategoryLargeFragment : Fragment() {
                     .setAction("Action", null)
                     .show()
         }
+        view.findViewById<View>(R.id.bttn_save).setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.next_action4)
+        )
     }
 
 
@@ -71,12 +75,12 @@ class CategoryLargeFragment : Fragment() {
         rv_profile.adapter = largeAdapter
 
         datas.apply {
-            add(LargeData(img=R.drawable.eggs,  name = "eggs", age = 24))
-            add(LargeData(img=R.drawable.garlic,  name = "garlic", age = 24))
-            add(LargeData(img=R.drawable.meats,  name = "meats", age = 24))
-            add(LargeData(img=R.drawable.nuts,  name = "nuts", age = 24))
-            add(LargeData(img=R.drawable.seafoods,   name = "seafoods", age = 24))
-            add(LargeData(img=R.drawable.spices,  name = "spices", age = 24))
+            add(LargeData(img=R.drawable.eggs,  name = "eggs"))
+            add(LargeData(img=R.drawable.garlic,  name = "garlic"))
+            add(LargeData(img=R.drawable.meats,  name = "meats"))
+            add(LargeData(img=R.drawable.nuts,  name = "nuts"))
+            add(LargeData(img=R.drawable.seafoods,   name = "seafoods"))
+            add(LargeData(img=R.drawable.spices,  name = "spices"))
             largeAdapter.datas = datas
             largeAdapter.notifyDataSetChanged()
         }

@@ -45,11 +45,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler(view)
-        //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
-        view.findViewById<FloatingActionButton>(R.id.navigate_action_button)?.setOnClickListener(
+        view.findViewById<FloatingActionButton>(R.id.plus_filter)?.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.next_action1, null)
         )
-        //TODO END STEP 7.2
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -71,10 +69,6 @@ class HomeFragment : Fragment() {
         datas.apply {
             add(GroupData(name = "filter-1"))
             add(GroupData(name = "filter-2"))
-            add(GroupData(name = "filter-3"))
-            add(GroupData(name = "filter-4"))
-            add(GroupData(name = "filter-5"))
-            add(GroupData(name = "filter-6"))
 
             groupAdapter.datas = datas
             groupAdapter.notifyDataSetChanged()

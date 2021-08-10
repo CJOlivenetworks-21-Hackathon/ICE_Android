@@ -34,8 +34,6 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
             bundle.putString("LARGE", target.name)
 
             Toast.makeText(holder.itemView.context, target.name, Toast.LENGTH_LONG).show()
-            // Using the Kotlin extension in the -ktx artifacts
-            // Alternatively, use Navigation.findNavController(holder.itemView)
             holder.itemView.findNavController().navigate(
                 R.id.next_action2, bundle)
         }
@@ -45,12 +43,10 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val txtName: TextView = itemView.findViewById(R.id.tv_rv_name)
-        private val txtAge: TextView = itemView.findViewById(R.id.tv_rv_age)
         private val imgProfile: ImageView = itemView.findViewById(R.id.img_rv_photo)
 
         fun bind(item: LargeData) {
             txtName.text = item.name
-            txtAge.text = item.age.toString()
             Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }
