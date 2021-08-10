@@ -71,12 +71,12 @@ class CategoryLargeFragment : Fragment() {
         rv_profile.adapter = largeAdapter
 
         datas.apply {
-            add(LargeData(img=R.drawable.eggs,  name = "eggs", age = 24))
-            add(LargeData(img=R.drawable.garlic,  name = "garlic", age = 24))
-            add(LargeData(img=R.drawable.meats,  name = "meats", age = 24))
-            add(LargeData(img=R.drawable.nuts,  name = "nuts", age = 24))
-            add(LargeData(img=R.drawable.seafoods,   name = "seafoods", age = 24))
-            add(LargeData(img=R.drawable.spices,  name = "spices", age = 24))
+            add(LargeData(img=R.drawable.eggs,  name = "eggs"))
+            add(LargeData(img=R.drawable.garlic,  name = "garlic"))
+            add(LargeData(img=R.drawable.meats,  name = "meats"))
+            add(LargeData(img=R.drawable.nuts,  name = "nuts"))
+            add(LargeData(img=R.drawable.seafoods,   name = "seafoods"))
+            add(LargeData(img=R.drawable.spices,  name = "spices"))
             largeAdapter.datas = datas
             largeAdapter.notifyDataSetChanged()
         }

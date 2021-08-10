@@ -45,12 +45,10 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val txtName: TextView = itemView.findViewById(R.id.tv_rv_name)
-        private val txtAge: TextView = itemView.findViewById(R.id.tv_rv_age)
         private val imgProfile: ImageView = itemView.findViewById(R.id.img_rv_photo)
 
         fun bind(item: LargeData) {
             txtName.text = item.name
-            txtAge.text = item.age.toString()
             Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }

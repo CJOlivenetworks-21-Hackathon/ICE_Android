@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRecycler(view)
         //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
-        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
+        view.findViewById<Button>(R.id.plus_filter)?.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.next_action1, null)
         )
         //TODO END STEP 7.2

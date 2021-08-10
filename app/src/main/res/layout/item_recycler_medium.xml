@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingHorizontal="20dp"
     android:paddingVertical="10dp"
-    android:background="@color/colorPrimary"
+    android:background="@color/lightGrey"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
