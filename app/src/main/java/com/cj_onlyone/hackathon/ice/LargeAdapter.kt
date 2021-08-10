@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -38,7 +37,7 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
             // Using the Kotlin extension in the -ktx artifacts
             // Alternatively, use Navigation.findNavController(holder.itemView)
             holder.itemView.findNavController().navigate(
-                    R.id.next_action2, bundle)
+                R.id.next_action2, bundle)
         }
         holder.bind(datas[position])
     }

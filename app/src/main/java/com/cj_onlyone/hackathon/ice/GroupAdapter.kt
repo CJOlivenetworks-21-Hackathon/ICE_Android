@@ -1,17 +1,24 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<MediumAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<MediumData>()
+class GroupAdapter (private val context: Context?) : RecyclerView.Adapter<GroupAdapter.ViewHolder>() {
+
+    var datas = mutableListOf<GroupData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_medium,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_group,parent,false)
         return ViewHolder(view)
     }
 
@@ -28,11 +35,10 @@ class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<Mediu
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val txtName: TextView = itemView.findViewById(R.id.tv_med_name)
+        private val grpView: Switch = itemView.findViewById(R.id.sw_group_name)
 
-        fun bind(item: MediumData) {
-            txtName.text = item.name
-            //Glide.with(itemView).load(item.img).into(imgProfile)
+        fun bind(item: GroupData) {
+            grpView.text = item.name
         }
     }
 

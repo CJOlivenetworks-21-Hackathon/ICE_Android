@@ -25,7 +25,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoryMediumFragment  : Fragment() {

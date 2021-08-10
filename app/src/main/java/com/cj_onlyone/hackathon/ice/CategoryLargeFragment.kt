@@ -17,7 +17,6 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
-import android.util.Log
 //import kotlinx.android.synthetic.main.activity_main.*
 import android.view.LayoutInflater
 import android.view.View
