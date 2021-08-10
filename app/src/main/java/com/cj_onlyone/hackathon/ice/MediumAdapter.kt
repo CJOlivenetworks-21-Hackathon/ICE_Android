@@ -1,23 +1,20 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAdapter.ViewHolder>() {
+class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<MediumAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<LargeData>()
+    var datas = mutableListOf<MediumData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_large,parent,false)
-        view.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action2, null)
-        )
+        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_medium,parent,false)
         return ViewHolder(view)
     }
 
@@ -34,14 +31,11 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val txtName: TextView = itemView.findViewById(R.id.tv_rv_name)
-        private val txtAge: TextView = itemView.findViewById(R.id.tv_rv_age)
-        private val imgProfile: ImageView = itemView.findViewById(R.id.img_rv_photo)
+        private val txtName: TextView = itemView.findViewById(R.id.tv_med_name)
 
-        fun bind(item: LargeData) {
+        fun bind(item: MediumData) {
             txtName.text = item.name
-            txtAge.text = item.age.toString()
-            Glide.with(itemView).load(item.img).into(imgProfile)
+            //Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }
 

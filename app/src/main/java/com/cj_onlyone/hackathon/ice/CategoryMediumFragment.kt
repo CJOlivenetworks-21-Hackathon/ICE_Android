@@ -17,14 +17,18 @@
 package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.RecyclerView
 
 class CategoryMediumFragment  : Fragment() {
+    lateinit var mediumAdapter: MediumAdapter
+    val datas = mutableListOf<MediumData>()
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -38,9 +42,34 @@ class CategoryMediumFragment  : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initRecycler(view)
+        //button for add to the cart
         view.findViewById<View>(R.id.next_button2).setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.next_action3)
         )
     }
 
+
+    private fun initRecycler(view:View) {
+        val rv_profile : RecyclerView = view.findViewById(R.id.rv_medium)
+        mediumAdapter = MediumAdapter(this.context)
+        mediumAdapter.itemClick = object : MediumAdapter.ItemClick{
+            override fun onClick(view: View, position: Int) {
+                Log.v("MEDIUM_CAT", "item onclicked")
+            }
+        }
+        rv_profile.adapter = mediumAdapter
+
+        datas.apply {
+            add(MediumData(name = "item1"))
+            add(MediumData(name = "item2"))
+            add(MediumData(name = "item3"))
+            add(MediumData(name = "item4"))
+            add(MediumData(name = "item5"))
+            add(MediumData(name = "item6"))
+            mediumAdapter.datas = datas
+            mediumAdapter.notifyDataSetChanged()
+        }
+
+    }
 }

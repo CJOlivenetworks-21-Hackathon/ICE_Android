@@ -25,7 +25,7 @@
         android:id="@+id/rv_profile"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:listitem="@layout/item_recycler_ex"
+        tools:listitem="@layout/item_recycler_large"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>

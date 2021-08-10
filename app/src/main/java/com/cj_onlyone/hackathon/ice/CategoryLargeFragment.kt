@@ -52,7 +52,6 @@ class CategoryLargeFragment : Fragment() {
         largeAdapter = LargeAdapter(this.context)
         largeAdapter.itemClick = object : LargeAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
-                Log.v("LARGE_CAT", "item onclicked")
             }
         }
         rv_profile.adapter = largeAdapter
