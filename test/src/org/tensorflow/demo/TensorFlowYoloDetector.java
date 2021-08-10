@@ -39,7 +39,7 @@ public class TensorFlowYoloDetector implements Classifier {
   private static final int NUM_BOXES_PER_BLOCK = 5;
 
   // TODO(andrewharp): allow loading anchors and classes
-  // from files.
+  // from files
   private static final double[] ANCHORS = {
     1.08, 1.19,
     3.42, 4.41,
@@ -258,4 +258,5 @@ public class TensorFlowYoloDetector implements Classifier {
   public void close() {
     inferenceInterface.close();
   }
+  
 }
