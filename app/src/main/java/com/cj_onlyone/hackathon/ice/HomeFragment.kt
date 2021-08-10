@@ -19,9 +19,11 @@ package com.cj_onlyone.hackathon.ice
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
+import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 /**
@@ -44,7 +46,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initRecycler(view)
         //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
-        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
+        view.findViewById<FloatingActionButton>(R.id.navigate_action_button)?.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.next_action1, null)
         )
         //TODO END STEP 7.2
@@ -59,7 +61,7 @@ class HomeFragment : Fragment() {
         groupAdapter = GroupAdapter(this.context)
         groupAdapter.itemClick = object : GroupAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
-                val switchMaterial : SwitchMaterial = view.findViewById(R.id.sw_group_name)
+                val switchMaterial : Switch = view.findViewById(R.id.sw_group_name)
                 val status = switchMaterial.isChecked
                 switchMaterial.isChecked = !status
             }
