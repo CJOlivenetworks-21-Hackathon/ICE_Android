@@ -18,20 +18,6 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     var datas = mutableListOf<LargeData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_large,parent,false)
-        /*
-        view.setOnClickListener { view ->
-                val target : String = view.findViewById<TextView>(R.id.tv_rv_name).toString()
-                val bundle = Bundle()
-                bundle.putString("Large", target)
-                Navigation.createNavigateOnClickListener(R.id.next_action2, null)
-
-        }
-        */
-        /*
-        view.setOnClickListener (
-                Navigation.createNavigateOnClickListener(R.id.next_action2, null)
-        )
-         */
         return ViewHolder(view)
     }
 

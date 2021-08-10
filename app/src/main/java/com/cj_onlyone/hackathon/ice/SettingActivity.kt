@@ -42,21 +42,12 @@ class SettingActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val host: NavHostFragment = supportFragmentManager
-                .findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
+        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
 
         // Set up Action Bar
         val navController = host.navController
 
         appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        // TODO STEP 9.5 - Create an AppBarConfiguration with the correct top-level destinations
-        // You should also remove the old appBarConfiguration setup above
-//        val drawerLayout : DrawerLayout? = findViewById(R.id.drawer_layout)
-//        appBarConfiguration = AppBarConfiguration(
-//                setOf(R.id.home_dest, R.id.deeplink_dest),
-//                drawerLayout)
-        // TODO END STEP 9.5
 
         setupActionBar(navController, appBarConfiguration)
 
@@ -71,9 +62,8 @@ class SettingActivity : AppCompatActivity() {
                 Integer.toString(destination.id)
             }
 
-            Toast.makeText(this@SettingActivity, "Navigated to $dest",
-                    Toast.LENGTH_SHORT).show()
-            Log.d("NavigationActivity", "Navigated to $dest")
+//            Toast.makeText(this@SettingActivity, "Navigated to $dest", Toast.LENGTH_SHORT).show()
+           // Log.d("NavigationActivity", "Navigated to $dest")
         }
     }
 

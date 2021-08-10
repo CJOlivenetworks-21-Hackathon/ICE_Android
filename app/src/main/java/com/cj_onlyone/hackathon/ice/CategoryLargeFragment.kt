@@ -54,6 +54,7 @@ class CategoryLargeFragment : Fragment() {
         initRecycler(view)
         val fab: View = view.findViewById(R.id.cart)
         fab.setOnClickListener{view ->
+
             Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                     .setAction("Action", null)
                     .show()
