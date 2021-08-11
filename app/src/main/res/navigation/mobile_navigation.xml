@@ -17,7 +17,7 @@
     app:startDestination="@+id/group_list_dest">
     <fragment
         android:id="@+id/group_list_dest"
-        android:name="com.cj_onlyone.hackathon.ice.HomeFragment"
+        android:name="com.cj_onlyone.hackathon.ice.setting.SettingFragment"
         android:label="@string/home"
         tools:layout="@layout/setting_fragment">
 
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/category_large_dest"
-        android:name="com.cj_onlyone.hackathon.ice.CategoryLargeFragment"
+        android:name="com.cj_onlyone.hackathon.ice.large.CategoryLargeFragment"
         tools:layout="@layout/category_large_fragment">
 
         <argument
@@ -59,7 +59,7 @@
 
     <fragment
         android:id="@+id/category_medium_dest"
-        android:name="com.cj_onlyone.hackathon.ice.CategoryMediumFragment"
+        android:name="com.cj_onlyone.hackathon.ice.medium.CategoryMediumFragment"
         tools:layout="@layout/category_medium_fragment">
 
         <argument

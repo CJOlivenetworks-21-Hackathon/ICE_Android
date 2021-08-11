@@ -1,4 +1,4 @@
-package com.cj_onlyone.hackathon.ice
+package com.cj_onlyone.hackathon.ice.medium
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cj_onlyone.hackathon.ice.R
 
 class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<MediumAdapter.ViewHolder>() {
 

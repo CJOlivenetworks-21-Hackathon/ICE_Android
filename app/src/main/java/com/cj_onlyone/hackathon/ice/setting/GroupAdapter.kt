@@ -1,17 +1,12 @@
-package com.cj_onlyone.hackathon.ice
+package com.cj_onlyone.hackathon.ice.setting
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Switch
-import android.widget.TextView
-import android.widget.Toast
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.cj_onlyone.hackathon.ice.R
 
 
 class GroupAdapter (private val context: Context?) : RecyclerView.Adapter<GroupAdapter.ViewHolder>() {

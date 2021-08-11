@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cj_onlyone.hackathon.ice
+package com.cj_onlyone.hackathon.ice.setting
 
 import android.os.Bundle
 import android.view.*
@@ -22,12 +22,13 @@ import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.cj_onlyone.hackathon.ice.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  * Fragment used to show how to navigate to another destination
  */
-class HomeFragment : Fragment() {
+class SettingFragment : Fragment() {
     lateinit var groupAdapter: GroupAdapter
     val datas = mutableListOf<GroupData>()
 

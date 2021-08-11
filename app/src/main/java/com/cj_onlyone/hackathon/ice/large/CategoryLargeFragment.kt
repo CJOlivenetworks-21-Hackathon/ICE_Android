@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cj_onlyone.hackathon.ice
+package com.cj_onlyone.hackathon.ice.large
 
 import android.os.Bundle
 //import kotlinx.android.synthetic.main.activity_main.*
@@ -24,7 +24,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
+import com.cj_onlyone.hackathon.ice.PreferenceUtil
+import com.cj_onlyone.hackathon.ice.R
 
 /**
  * Presents how multiple steps flow could be implemented.
@@ -74,12 +75,12 @@ class CategoryLargeFragment : Fragment() {
         rv_profile.adapter = largeAdapter
 
         datas.apply {
-            add(LargeData(img=R.drawable.eggs,  name = "eggs"))
-            add(LargeData(img=R.drawable.garlic,  name = "garlic"))
-            add(LargeData(img=R.drawable.meats,  name = "meats"))
-            add(LargeData(img=R.drawable.nuts,  name = "nuts"))
-            add(LargeData(img=R.drawable.seafoods,   name = "seafoods"))
-            add(LargeData(img=R.drawable.spices,  name = "spices"))
+            add(LargeData(img= R.drawable.eggs,  name = "eggs"))
+            add(LargeData(img= R.drawable.garlic,  name = "garlic"))
+            add(LargeData(img= R.drawable.meats,  name = "meats"))
+            add(LargeData(img= R.drawable.nuts,  name = "nuts"))
+            add(LargeData(img= R.drawable.seafoods,   name = "seafoods"))
+            add(LargeData(img= R.drawable.spices,  name = "spices"))
             largeAdapter.datas = datas
             largeAdapter.notifyDataSetChanged()
         }

@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.cj_onlyone.hackathon.ice
+package com.cj_onlyone.hackathon.ice.medium
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +26,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.cj_onlyone.hackathon.ice.PreferenceUtil
+import com.cj_onlyone.hackathon.ice.R
 
 class CategoryMediumFragment  : Fragment() {
 
@@ -52,7 +53,7 @@ class CategoryMediumFragment  : Fragment() {
         prefs = PreferenceUtil(view.context)
         val rv_profile : RecyclerView = view.findViewById(R.id.rv_medium)
         mediumAdapter = MediumAdapter(this.context)
-        mediumAdapter.itemClick = object : MediumAdapter.ItemClick{
+        mediumAdapter.itemClick = object : MediumAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 view.startAnimation(AnimationUtils.loadAnimation(view.context, R.anim.item_click))
                 // store selected item info
