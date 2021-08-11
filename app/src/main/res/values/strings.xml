@@ -11,7 +11,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">ICE(I Can Eat)</string>
+    <string name="app_name">ICE (I Can Eat)</string>
 
     <!-- Menu strings -->
     <string name="shopping_cart">Shopping Cart</string>
