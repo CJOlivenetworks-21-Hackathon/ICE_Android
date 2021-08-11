@@ -21,6 +21,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -53,7 +54,8 @@ class CategoryMediumFragment  : Fragment() {
         mediumAdapter = MediumAdapter(this.context)
         mediumAdapter.itemClick = object : MediumAdapter.ItemClick{
             override fun onClick(view: View, position: Int) {
-                Log.v("MEDIUM_CAT", "item onclicked")
+                view.startAnimation(AnimationUtils.loadAnimation(view.context, R.anim.item_click))
+                // store selected item info
                 val item = view.findViewById<TextView>(R.id.tv_med_name).toString()
                 prefs.setStrign(item, "T")
                 Toast.makeText(view.context, item, Toast.LENGTH_LONG).show()

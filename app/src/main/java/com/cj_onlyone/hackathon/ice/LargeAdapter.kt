@@ -33,7 +33,6 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
             val bundle = Bundle()
             bundle.putString("LARGE", target.name)
 
-            Toast.makeText(holder.itemView.context, target.name, Toast.LENGTH_LONG).show()
             holder.itemView.findNavController().navigate(
                 R.id.next_action2, bundle)
         }

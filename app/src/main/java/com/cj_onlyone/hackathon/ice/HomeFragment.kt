@@ -18,13 +18,11 @@ package com.cj_onlyone.hackathon.ice
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Button
 import android.widget.Switch
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 /**
  * Fragment used to show how to navigate to another destination
@@ -39,7 +37,7 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.group_list_fragment, container, false)
+        return inflater.inflate(R.layout.setting_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -19,7 +19,7 @@
         android:id="@+id/group_list_dest"
         android:name="com.cj_onlyone.hackathon.ice.HomeFragment"
         android:label="@string/home"
-        tools:layout="@layout/group_list_fragment">
+        tools:layout="@layout/setting_fragment">
 
         <action
             android:id="@+id/next_action1"

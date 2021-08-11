@@ -24,6 +24,7 @@ class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<Mediu
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(datas[position])
+        
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -32,7 +33,6 @@ class MediumAdapter(private val context: Context?)  : RecyclerView.Adapter<Mediu
 
         fun bind(item: MediumData) {
             txtName.text = item.name
-            //Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }
 
