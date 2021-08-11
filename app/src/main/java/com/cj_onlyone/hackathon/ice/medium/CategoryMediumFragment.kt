@@ -22,19 +22,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.cj_onlyone.hackathon.ice.PreferenceUtil
 import com.cj_onlyone.hackathon.ice.R
+import com.cj_onlyone.hackathon.ice.util.SharedPreferenceUtil
 
 class CategoryMediumFragment  : Fragment() {
-
-    companion object {
-        lateinit var  prefs : PreferenceUtil
-    }
-
     lateinit var mediumAdapter: MediumAdapter
     val datas = mutableListOf<MediumData>()
 
@@ -50,7 +44,6 @@ class CategoryMediumFragment  : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // preference store setup
-        prefs = PreferenceUtil(view.context)
         val rv_profile : RecyclerView = view.findViewById(R.id.rv_medium)
         mediumAdapter = MediumAdapter(this.context)
         mediumAdapter.itemClick = object : MediumAdapter.ItemClick {
@@ -58,8 +51,7 @@ class CategoryMediumFragment  : Fragment() {
                 view.startAnimation(AnimationUtils.loadAnimation(view.context, R.anim.item_click))
                 // store selected item info
                 val item = view.findViewById<TextView>(R.id.tv_med_name).toString()
-                prefs.setStrign(item, "T")
-                Toast.makeText(view.context, item, Toast.LENGTH_LONG).show()
+                SharedPreferenceUtil.set(view.context, item, true)
             }
         }
         rv_profile.adapter = mediumAdapter
@@ -69,24 +61,20 @@ class CategoryMediumFragment  : Fragment() {
         if (largeCategory!= null) {
             datas.apply {
                 add(MediumData(name = largeCategory))
-                mediumAdapter.datas = datas
-                mediumAdapter.notifyDataSetChanged()
             }
         }
         else {
             datas.apply {
                 add(MediumData(name = "item1"))
                 add(MediumData(name = "item2"))
-                add(MediumData(name = "item3"))
-                add(MediumData(name = "item4"))
-                add(MediumData(name = "item5"))
-                add(MediumData(name = "item6"))
-                mediumAdapter.datas = datas
-                mediumAdapter.notifyDataSetChanged()
             }
         }
+
+        mediumAdapter.datas = datas
+        mediumAdapter.notifyDataSetChanged()
+
         view.findViewById<View>(R.id.next_button2).setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action3)
+                Navigation.createNavigateOnClickListener(R.id.medium_to_large)
         )
     }
 

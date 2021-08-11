@@ -14,7 +14,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/primary">
         <item
-            android:id="@id/group_list_dest"
+            android:id="@id/setting_dest"
             android:icon="@drawable/ic_home"
             android:title="@string/home" />
     </group>

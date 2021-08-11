@@ -14,9 +14,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/group_list_dest">
+    app:startDestination="@+id/setting_dest">
     <fragment
-        android:id="@+id/group_list_dest"
+        android:id="@+id/setting_dest"
         android:name="com.cj_onlyone.hackathon.ice.setting.SettingFragment"
         android:label="@string/home"
         tools:layout="@layout/setting_fragment">
@@ -41,7 +41,7 @@
             android:defaultValue="1"/>
 
         <action
-            android:id="@+id/next_action2"
+            android:id="@+id/large_to_medium"
             app:destination="@+id/category_medium_dest"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -49,12 +49,20 @@
             app:popExitAnim="@anim/slide_out_right" />
 
         <action
-            android:id="@+id/next_action4"
-            app:destination="@+id/group_list_dest"
+            android:id="@+id/large_to_setting"
+            app:destination="@+id/setting_dest"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/large_to_cart"
+            app:destination="@+id/cart_fragment_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -68,8 +76,22 @@
             android:defaultValue="2"/>
 
         <action
-            android:id="@+id/next_action3"
+            android:id="@+id/medium_to_large"
             app:destination="@+id/category_large_dest"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart_fragment_dest"
+        android:name="com.cj_onlyone.hackathon.ice.cart.CartFragment"
+        android:label="cart_fragment"
+        tools:layout="@layout/cart_fragment" >
+
+        <action
+            android:id="@+id/action_cartFragment_to_category_large_dest"
+            app:destination="@id/category_large_dest"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"

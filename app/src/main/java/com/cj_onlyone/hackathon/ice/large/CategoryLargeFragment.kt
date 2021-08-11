@@ -24,18 +24,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.cj_onlyone.hackathon.ice.PreferenceUtil
 import com.cj_onlyone.hackathon.ice.R
+import com.cj_onlyone.hackathon.ice.util.SharedPreferenceUtil
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  * Presents how multiple steps flow could be implemented.
  */
 class CategoryLargeFragment : Fragment() {
-
-    companion object {
-        lateinit var  prefs : PreferenceUtil
-    }
-
     lateinit var largeAdapter: LargeAdapter
     val datas = mutableListOf<LargeData>()
 
@@ -52,15 +48,17 @@ class CategoryLargeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //initialize recycler view
         initRecycler(view)
-        //setup to read for cart
-        prefs = PreferenceUtil(view.context)
+
         // floating button for cart
-        val floating_cart: View = view.findViewById(R.id.cart)
-        floating_cart.setOnClickListener{view ->
-        }
+        val value = SharedPreferenceUtil.get(view.context, "total", 0)
+
+        view.findViewById<FloatingActionButton>(R.id.cart).setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.large_to_cart)
+        )
+
         // append listener for save button
         view.findViewById<View>(R.id.bttn_save).setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action4)
+                Navigation.createNavigateOnClickListener(R.id.large_to_setting)
         )
     }
 

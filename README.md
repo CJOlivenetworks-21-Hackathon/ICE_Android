@@ -1,3 +1,17 @@
+
+# DIR 
+- large : 큰 카테고리 
+- medium : 작은 카테고리 
+- setting : 셋팅 폴더
+
+
+
+
+
+
+
+
+
 # Android Navigation codelab
 
 Content: https://codelabs.developers.google.com/codelabs/android-navigation/

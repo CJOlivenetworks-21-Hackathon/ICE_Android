@@ -31,4 +31,5 @@
     <string name="finish_button">Add To Cart</string>
     <string name="send_deep_link_notification_button">Send deep link notification</string>
     <string name="cart">Cart</string>
+    <string name="back">Go Back</string>
 </resources>

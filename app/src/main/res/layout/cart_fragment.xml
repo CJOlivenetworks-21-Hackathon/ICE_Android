@@ -17,10 +17,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cj_onlyone.hackathon.ice.medium.CategoryMediumFragment">
+    tools:context="com.cj_onlyone.hackathon.ice.cart.CartFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_medium"
+        android:id="@+id/rv_cart"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:orientation="vertical"
@@ -28,13 +28,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_recycler_medium" />
+        tools:listitem="@layout/item_recycler_cart" />
 
     <Button
-        android:id="@+id/next_button2"
+        android:id="@+id/bttn_exit_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/finish_button"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_medium" />
+        app:layout_constraintTop_toBottomOf="@+id/rv_cart" />
 </androidx.constraintlayout.widget.ConstraintLayout>

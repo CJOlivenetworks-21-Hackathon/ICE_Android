@@ -1,4 +1,4 @@
-package com.cj_onlyone.hackathon.ice.large
+package com.cj_onlyone.hackathon.ice.cart
 
 import android.content.Context
 import android.os.Bundle
@@ -11,12 +11,14 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cj_onlyone.hackathon.ice.R
+import com.cj_onlyone.hackathon.ice.cart.CartAdapter
+import com.cj_onlyone.hackathon.ice.cart.CartData
 
-class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAdapter.ViewHolder>() {
+class CartAdapter (private val context: Context?) : RecyclerView.Adapter<CartAdapter.ViewHolder>() {
 
-    var datas = mutableListOf<LargeData>()
+    var datas = mutableListOf<CartData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_large,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_recycler_cart,parent,false)
         return ViewHolder(view)
     }
 
@@ -28,25 +30,15 @@ class LargeAdapter(private val context: Context?) : RecyclerView.Adapter<LargeAd
     var itemClick : ItemClick? = null
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemView.setOnClickListener{
-            val target : LargeData = datas[position]
-            val bundle = Bundle()
-            bundle.putString("LARGE", target.name)
-
-            holder.itemView.findNavController().navigate(
-                    R.id.large_to_medium, bundle)
-        }
         holder.bind(datas[position])
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val txtName: TextView = itemView.findViewById(R.id.tv_rv_name)
-        private val imgProfile: ImageView = itemView.findViewById(R.id.img_rv_photo)
+        private val txtName: TextView = itemView.findViewById(R.id.tv_cart_item)
 
-        fun bind(item: LargeData) {
+        fun bind(item: CartData) {
             txtName.text = item.name
-            Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }
 
